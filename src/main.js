@@ -125,8 +125,8 @@ function initGame(){
     gameScore.innerText = carrot_count;
     //벌레와 당근을 생성한 뒤 filed에 추가해준다
     // console.log(fieldRect);
-    addItem('carrot', carrot_count, 'img/carrot.png')
-    addItem('bug', bug_count, 'img/bug.png')
+    addItem('carrot', carrot_count, 'img/red.png')
+    addItem('bug', bug_count, 'img/green.png')
 }
 
 function onFieldClick(event){

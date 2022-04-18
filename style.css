@@ -108,7 +108,7 @@ body {text-align: center;}
 .bug,.carrot{
     position: absolute;
     transition: all .1s;
-    
+    width: 70px;
 }
 
 .bug:hover,.carrot:hover{
