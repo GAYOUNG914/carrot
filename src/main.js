@@ -1,7 +1,7 @@
 const carrot_size = 80;
-const carrot_count = 5;
-const bug_count = 5;
-const GAME_DURATION_SEC=5;
+const carrot_count = 6;
+const bug_count = 6;
+const GAME_DURATION_SEC=4;
 
 const field = document.querySelector('.game_field');
 const fieldRect = field.getBoundingClientRect();
@@ -135,7 +135,7 @@ function onFieldClick(event){
     }
     const target = event.target;
     if(target.matches('.carrot')){
-        // console.log('당근')
+        console.log('red')
         target.remove();
         score++;
         playSound(carrotSound);
@@ -144,7 +144,7 @@ function onFieldClick(event){
             finishiGame(true);
         }
     }else if(target.matches('.bug')){
-        // console.log('벌레');
+        console.log('green');
         playSound(bugSound);
         finishiGame(false);
     }
@@ -165,10 +165,10 @@ function updateScoreBoard(){
 function addItem(className, count, imgPath){
     const x1 = 0;
     const y1 =0;
-    const x2 = fieldRect.width - carrot_size; //당근 사이즈만큼 빼줘야 그림이 필드를 넘어가지 않는다
-    const y2 = fieldRect.height - carrot_size; //당근 사이즈만큼 빼줘야 그림이 필드를 넘어가지 않는다
+    const x2 = fieldRect.width - carrot_size*1.5; //당근 사이즈만큼 빼줘야 그림이 필드를 넘어가지 않는다
+    const y2 = fieldRect.height - carrot_size*1.5; //당근 사이즈만큼 빼줘야 그림이 필드를 넘어가지 않는다
     for(let i=0; i <count; i++){
-        const item = document.createElement('img');
+        const item = document.createElement('img'); //동적으로 엘리먼트 생성해서 돔에 뿌려주는 api
 
         item.setAttribute('class', className);
         item.setAttribute('src', imgPath);
